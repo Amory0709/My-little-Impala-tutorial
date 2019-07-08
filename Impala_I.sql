@@ -1,4 +1,4 @@
-Source: https://www.cloudera.com/documentation/enterprise/latest/topics/impala_tutorial.html
+--Source: https://www.cloudera.com/documentation/enterprise/latest/topics/impala_tutorial.html
 /*2019-Jul-08*/
 /*Impala supports data types with the same names and semantics as the equivalent Hive data types: 
 STRING, TINYINT, SMALLINT, INT, BIGINT, FLOAT, DOUBLE, BOOLEAN, STRING, TIMESTAMP.*/
