@@ -1,5 +1,8 @@
 Source: https://www.cloudera.com/documentation/enterprise/latest/topics/impala_tutorial.html
 /*2019-Jul-08*/
+/*Impala supports data types with the same names and semantics as the equivalent Hive data types: 
+STRING, TINYINT, SMALLINT, INT, BIGINT, FLOAT, DOUBLE, BOOLEAN, STRING, TIMESTAMP.*/
+
 -- For schema
 
 SHOW TABLE STATS xxx;
@@ -14,6 +17,7 @@ DESCRIBE xxx;
 
 DESCRIBE FORMATTED xxx;
 -- as follow:
+/*
 +------------------------------+-------------------------------
 | name                         | type
 +------------------------------+-------------------------------
@@ -29,6 +33,8 @@ DESCRIBE FORMATTED xxx;
 | SerDe Library:               | org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe
 | InputFormat:                 | org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputForma
 | OutputFormat:                | org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat
+
+*/
 
 SHOW CREATE TABLE xxx;
 --Display the SQL to create this table
@@ -48,11 +54,13 @@ SELECT `rows`, `nonnull`, `rows` - `nonnull` AS 'nulls',
   (`nonnull` / `rows`) * 100 AS 'percentage non-null'
 FROM t1;
 
+/*
 +-----------+---------+-----------+---------------------+
 | rows      | nonnull | nulls     | percentage non-null |
 +-----------+---------+-----------+---------------------+
 | 123534969 | 412968  | 123122001 | 0.3342923897119365  |
 +-----------+---------+-----------+---------------------+
+*/
 
 CREATE TABLE xx PARTITIONED BY (yr INT) STORED AS PARQUET;
 INSERT INTO table1 PARTITION(yr) SELECT m,d,wk,yr FROM table2;
