@@ -69,3 +69,6 @@ INSERT INTO table1 PARTITION(yr) SELECT m,d,wk,yr FROM table2;
 
 COMPUTE INCREMENTAL STATS xx;
 -- way to collect statistics for partitioned tables
+
+-- Time limit
+SET EXEC_TIME_LIMIT_S=seconds;
